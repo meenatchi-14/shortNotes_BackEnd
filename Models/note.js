@@ -2,7 +2,7 @@ import { ObjectId } from "bson"
 import mongoose from "mongoose"
 
 const noteSchema= new mongoose.Schema({
-    ropic:{
+    title:{
         type:String,
         required:true,    
     },
