@@ -15,7 +15,7 @@ app.use(express.json())
 app.use(cors())
 //database connection
 connectDB()
-//initializing yhe routes
+//initializing routes
 app.use("/app/user",userRouter)
 app.use("/app/notes",isAuthenticated,notesRouter)
 //listening server
