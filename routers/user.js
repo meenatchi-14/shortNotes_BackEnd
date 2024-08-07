@@ -45,7 +45,7 @@ router.post("/signup",async(req,res)=>{
     const token=generateToken(user._id)
     res.status(201).json({data:"successfully register",token})         
     } catch (error) {
-        console.log("meena",error)
+        console.log("server-error",error)
         res.status(500).json({error:"interal server error"})
         
     }
