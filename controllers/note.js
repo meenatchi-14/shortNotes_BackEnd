@@ -6,7 +6,6 @@ export function getAllNotes(){
 export function getUserNotes(req){
     return Notes.find({user:req.user._id}).populate("user","name email");
 }
-
 export function addNewNotes(req){
    return new Notes({
     ...req.body,
