@@ -10,10 +10,9 @@ export const isAuthenticated=async(req,res,next)=>{
         try {
              token=await req.headers["x-auth-token"]
            const decode= jwt.verify(token,process.env.SECRET_KEY)
-           req.user=decode.id;
+           req.user=decode._id;
            next();
         } catch (error) {
-            console.log(error)
             res.status(500).json({error:"Athorization denied"})  
         }
     }

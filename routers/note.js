@@ -21,11 +21,12 @@ router.get("/user/all",async(req,res)=>{
     try {
         const notes=await getUserNotes(req);
         if(notes.length<=0){
-            return res.status(400).json({error:"not content avaiable"});
+            return res.status(404).json({error:"not content avaiable"});
         }
         res.status(201).json({data:notes})
 
     } catch (error) {
+        console.log("error",error)
         res.status(500).json({error:"interal server error"})
     }
 })
@@ -50,7 +51,7 @@ router.put("/edit/:id",async(req,res)=>{
     try {
         const editedNote=await editNotes(req);
         if(!editedNote){ 
-            return res.status(400).json({error:"error updating new note"})
+            return res.status(400).json({error:"error updating note"})
           }
           return res.status(200).json({data:editedNote,message:"updated successfully"})
         
@@ -64,7 +65,7 @@ router.delete("/delete/:id",async(req,res)=>{
     try {
         const deletedNote=await deleteNote(req);
         if(!deletedNote){ 
-            return res.status(400).json({error:"error deleting new note"})
+            return res.status(400).json({error:"error deleting a note"})
           }
           return res.status(200).json({
             message:"Deleted successfully"})

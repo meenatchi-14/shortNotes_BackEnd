@@ -4,7 +4,7 @@ export function getAllNotes(){
     return Notes.find().populate("user","name");
 }
 export function getUserNotes(req){
-    return Notes.find({user:req.user._id}).populate("user","name email");
+    return Notes.find({user:req.user}).populate("user","name");
 }
 export function addNewNotes(req){
    return new Notes({
@@ -18,8 +18,7 @@ export function editNotes(req){
         {_id:req.params.id},
         {$set:req.body},
         {new:true}
-
-    ).save()
+    );
 }
 
 export function deleteNote(req){
