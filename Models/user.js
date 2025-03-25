@@ -21,4 +21,4 @@ password:{
 },
  });
  const  User=mongoose.model("user",userSchema)
- export {User};
+ export { User };
