@@ -20,5 +20,5 @@ password:{
    unique:true,
 },
  });
- const  User=mongoose.model("user",userSchema)
+ const  User=mongoose.Model("user",userSchema)
  export { User };
