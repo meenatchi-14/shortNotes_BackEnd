@@ -15,5 +15,5 @@ const noteSchema= new mongoose.Schema({
         ref:"user",
     }
 });
-const Notes= mongoose.Model("notes",noteSchema)
+const Notes= mongoose.model("notes",noteSchema)
 export {Notes}
