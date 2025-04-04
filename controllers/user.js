@@ -1,4 +1,4 @@
-import { User } from "../models/user.js";
+import { User } from "../Models/user.js";
 
 export function getUserByEmail(req){
     return User.findOne({

@@ -2,7 +2,7 @@ import express from "express";
 import bcrypt from "bcrypt"
 import { getUserByEmail } from "../controllers/user.js"
 import { generateToken } from "../auth/auth.js";
-import {User} from "../models/user.js";
+import {User} from "../Models/user.js";
 
 const router=express.Router()
 
